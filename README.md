@@ -13,3 +13,8 @@ Testing using custom schema to POST data from 'http-log' plugin
 ## Lua helloWorld
 Testing effort of working with Lua
 > cd ./lua-helloworld
+
+## TODO:
+- Add analytics agent for Log analytics
+- Add audit data: https://docs.konghq.com/enterprise/2.4.x/admin-api/audit-log/
+- Add metrics data: https://docs.konghq.com/enterprise/2.4.x/admin-api/#health-routes
