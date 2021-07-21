@@ -1,0 +1,5 @@
+{ "schema": { "account": "integer",
+"amount": "float",
+"product": "string",
+"object": { "type": "string" },
+"method" :"string" } }

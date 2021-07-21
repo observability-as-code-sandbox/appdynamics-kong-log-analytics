@@ -1,0 +1,5 @@
+{ "schema": { "account": "integer",
+"amount": "float",
+"product": "string",
+"object": { "type": "string" },
+"list": [{"balancer_start":"integer","balancer_latency":"integer","ip":"string","port":"integer"}] } }

@@ -1,0 +1,66 @@
+HTTP/1.1 200 OK
+Date: Tue, 20 Jul 2021 12:20:40 GMT
+Content-Type: text/plain; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Access-Control-Allow-Origin: *
+X-Kong-Admin-Latency: 1
+Server: kong/2.5.0
+
+# HELP kong_datastore_reachable Datastore reachable from Kong, 0 is unreachable
+# TYPE kong_datastore_reachable gauge
+kong_datastore_reachable 1
+# HELP kong_memory_lua_shared_dict_bytes Allocated slabs in bytes in a shared_dict
+# TYPE kong_memory_lua_shared_dict_bytes gauge
+kong_memory_lua_shared_dict_bytes{shared_dict="kong",kong_subsystem="http"} 40960
+kong_memory_lua_shared_dict_bytes{shared_dict="kong_cluster_events",kong_subsystem="http"} 40960
+kong_memory_lua_shared_dict_bytes{shared_dict="kong_core_db_cache",kong_subsystem="http"} 823296
+kong_memory_lua_shared_dict_bytes{shared_dict="kong_core_db_cache_2",kong_subsystem="http"} 794624
+kong_memory_lua_shared_dict_bytes{shared_dict="kong_core_db_cache_miss",kong_subsystem="http"} 90112
+kong_memory_lua_shared_dict_bytes{shared_dict="kong_core_db_cache_miss_2",kong_subsystem="http"} 86016
+kong_memory_lua_shared_dict_bytes{shared_dict="kong_db_cache",kong_subsystem="http"} 794624
+kong_memory_lua_shared_dict_bytes{shared_dict="kong_db_cache_2",kong_subsystem="http"} 794624
+kong_memory_lua_shared_dict_bytes{shared_dict="kong_db_cache_miss",kong_subsystem="http"} 86016
+kong_memory_lua_shared_dict_bytes{shared_dict="kong_db_cache_miss_2",kong_subsystem="http"} 86016
+kong_memory_lua_shared_dict_bytes{shared_dict="kong_healthchecks",kong_subsystem="http"} 40960
+kong_memory_lua_shared_dict_bytes{shared_dict="kong_locks",kong_subsystem="http"} 61440
+kong_memory_lua_shared_dict_bytes{shared_dict="kong_process_events",kong_subsystem="http"} 45056
+kong_memory_lua_shared_dict_bytes{shared_dict="kong_rate_limiting_counters",kong_subsystem="http"} 90112
+kong_memory_lua_shared_dict_bytes{shared_dict="prometheus_metrics",kong_subsystem="http"} 53248
+# HELP kong_memory_lua_shared_dict_total_bytes Total capacity in bytes of a shared_dict
+# TYPE kong_memory_lua_shared_dict_total_bytes gauge
+kong_memory_lua_shared_dict_total_bytes{shared_dict="kong",kong_subsystem="http"} 5242880
+kong_memory_lua_shared_dict_total_bytes{shared_dict="kong_cluster_events",kong_subsystem="http"} 5242880
+kong_memory_lua_shared_dict_total_bytes{shared_dict="kong_core_db_cache",kong_subsystem="http"} 134217728
+kong_memory_lua_shared_dict_total_bytes{shared_dict="kong_core_db_cache_2",kong_subsystem="http"} 134217728
+kong_memory_lua_shared_dict_total_bytes{shared_dict="kong_core_db_cache_miss",kong_subsystem="http"} 12582912
+kong_memory_lua_shared_dict_total_bytes{shared_dict="kong_core_db_cache_miss_2",kong_subsystem="http"} 12582912
+kong_memory_lua_shared_dict_total_bytes{shared_dict="kong_db_cache",kong_subsystem="http"} 134217728
+kong_memory_lua_shared_dict_total_bytes{shared_dict="kong_db_cache_2",kong_subsystem="http"} 134217728
+kong_memory_lua_shared_dict_total_bytes{shared_dict="kong_db_cache_miss",kong_subsystem="http"} 12582912
+kong_memory_lua_shared_dict_total_bytes{shared_dict="kong_db_cache_miss_2",kong_subsystem="http"} 12582912
+kong_memory_lua_shared_dict_total_bytes{shared_dict="kong_healthchecks",kong_subsystem="http"} 5242880
+kong_memory_lua_shared_dict_total_bytes{shared_dict="kong_locks",kong_subsystem="http"} 8388608
+kong_memory_lua_shared_dict_total_bytes{shared_dict="kong_process_events",kong_subsystem="http"} 5242880
+kong_memory_lua_shared_dict_total_bytes{shared_dict="kong_rate_limiting_counters",kong_subsystem="http"} 12582912
+kong_memory_lua_shared_dict_total_bytes{shared_dict="prometheus_metrics",kong_subsystem="http"} 5242880
+# HELP kong_memory_workers_lua_vms_bytes Allocated bytes in worker Lua VM
+# TYPE kong_memory_workers_lua_vms_bytes gauge
+kong_memory_workers_lua_vms_bytes{pid="23",kong_subsystem="http"} 76705783
+kong_memory_workers_lua_vms_bytes{pid="24",kong_subsystem="http"} 76703636
+kong_memory_workers_lua_vms_bytes{pid="25",kong_subsystem="http"} 76678392
+kong_memory_workers_lua_vms_bytes{pid="26",kong_subsystem="http"} 76685655
+kong_memory_workers_lua_vms_bytes{pid="27",kong_subsystem="http"} 76685655
+kong_memory_workers_lua_vms_bytes{pid="28",kong_subsystem="http"} 76685433
+# HELP kong_nginx_http_current_connections Number of HTTP connections
+# TYPE kong_nginx_http_current_connections gauge
+kong_nginx_http_current_connections{state="accepted"} 13
+kong_nginx_http_current_connections{state="active"} 1
+kong_nginx_http_current_connections{state="handled"} 13
+kong_nginx_http_current_connections{state="reading"} 0
+kong_nginx_http_current_connections{state="total"} 14
+kong_nginx_http_current_connections{state="waiting"} 0
+kong_nginx_http_current_connections{state="writing"} 1
+# HELP kong_nginx_metric_errors_total Number of nginx-lua-prometheus errors
+# TYPE kong_nginx_metric_errors_total counter
+kong_nginx_metric_errors_total 0

@@ -1,0 +1,39 @@
+_format_version: "2.1"
+
+services:
+  - name: gist-service
+    url: https://api.github.com
+    routes:
+      - name: gists-route
+        paths:
+          - /gists
+  - name: youtube-service
+    url: https://www.youtube.com
+    routes:
+      - name: youtube-route
+        paths:
+          - /watch
+
+plugins:
+  - name: rate-limiting
+    service: gist-service
+    config:
+      minute: 5
+      policy: local
+  - name: prometheus
+  - name: file-log
+    config: 
+      path: /usr/local/kong//logs/file.log # /dev/stdout #/tmp/file.log
+      reopen: false
+  # - name: http-log
+  #   config: 
+  #     http_endpoint: http://***REMOVED***:9080/events/publish/myProducts
+  #     method: POST
+  #     timeout: 1000
+  #     keepalive: 1000
+  #     flush_timeout: 2
+  #     retry_count: 15
+  #     headers:
+  #       X-Events-API-AccountName: "***REMOVED***"
+  #       X-Events-API-Key: "***REMOVED***"
+  #       Content-type: "application/vnd.appd.events+json;v=2"

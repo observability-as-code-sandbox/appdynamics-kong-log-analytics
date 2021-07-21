@@ -1,0 +1,6 @@
+
+GET https://gist.github.com/pantsel/73d949774bd8e917bfd3d9745d71febf
+Accept: application/json
+
+GET https://www.youtube.com/watch?v=20rOdqag4Dw&t=315s
+Accept: application/json
