@@ -1,6 +1,15 @@
 version: '3.7'
 
 services:
+  appd-analytics:
+    #image: "docker.io/appdynamics/analytics-agent:log-20.6.0"
+    image: "appdynamics/machine-agent-analytics:20.8.0"
+    env_file: .env
+    ports:
+      - "9090:9090"
+    volumes:
+      - "./log-mount:/var/log"
+      -  ./log4j.xml:/opt/appdynamics/machine-agent/conf/logging/log4j.xml
   kong-migrations:
     image: "kong:latest"
     environment:
