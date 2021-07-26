@@ -13,17 +13,26 @@ services:
       - name: youtube-route
         paths:
           - /watch
+  - host: mockbin.org
+    name: example_service
+    port: 80
+    protocol: http
+    routes:
+    - name: mocking
+      paths:
+      - /mock
+      strip_path: true
 
 plugins:
   - name: rate-limiting
     service: gist-service
     config:
-      minute: 5
+      minute: 8
       policy: local
   - name: prometheus
   - name: file-log
     config: 
-      path: /usr/local/kong//logs/file.log # /dev/stdout #/tmp/file.log
+      path: /usr/local/kong/logs/file.log # /dev/stdout #/tmp/file.log
       reopen: false
   # - name: http-log
   #   config: 

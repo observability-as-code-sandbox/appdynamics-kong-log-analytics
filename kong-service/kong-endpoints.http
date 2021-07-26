@@ -5,6 +5,17 @@ Accept: application/json
 GET http://127.0.0.1:8000/watch
 Accept: application/json
 
+GET http://127.0.0.1:8000/mock
+Accept: application/json
+
+POST http://127.0.0.1:8000/mock/request?foo=bar&foo=baz HTTP/1.1
+Cookie: foo=bar; bar=baz
+X-Pretty-Print: 2
+Host: mockbin.com
+Content-Length: 14
+
+{"foo": "bar"}
+
 # metrics
 GET http://localhost:9001/status
 Accept: application/json
