@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: spring-boot
+    tier: spring-tier
+    lang: java
+  name: spring-boot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-boot
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: spring-boot
+    spec:
+      containers:
+      - image: springguides/demo
+        name: demo
+        resources: {}
+status: {}
