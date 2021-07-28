@@ -14,7 +14,13 @@ Testing using custom schema to POST data from 'http-log' plugin
 Testing effort of working with Lua
 > cd ./lua-helloworld
 
-## TODO:
-- Add analytics agent for Log analytics
-- Add audit data: https://docs.konghq.com/enterprise/2.4.x/admin-api/audit-log/
+## Java-spring backend services
+> cd ./backend-services
+
+## How to contribute? 
+Check the project issues
+Join #hsbc_kong
+
+## Additional data
+- Audit data: https://docs.konghq.com/enterprise/2.4.x/admin-api/audit-log/
 - Add metrics data: https://docs.konghq.com/enterprise/2.4.x/admin-api/#health-routes
