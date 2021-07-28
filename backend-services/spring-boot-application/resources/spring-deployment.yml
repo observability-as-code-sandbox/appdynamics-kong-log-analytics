@@ -18,7 +18,10 @@ spec:
         app: spring-boot
     spec:
       containers:
-      - image: springguides/demo
-        name: demo
+      - image: arey/springboot-petclinic
+        name: spring-boot
         resources: {}
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: "prod"
 status: {}

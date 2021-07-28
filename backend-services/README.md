@@ -25,6 +25,11 @@ kubectl create service clusterip spring-boot --tcp=8080:8080 --dry-run=client -o
 ./spring-boot-application/clean-application-resources.sh
 ```
 
+Port fwding
+```
+k port-forward svc/spring-boot-lb 8080:8080
+```
+
 ####  Do I need ingress here? > would GCP be easy hosting solution (enable in UI)
 
 ## Deploy Agent

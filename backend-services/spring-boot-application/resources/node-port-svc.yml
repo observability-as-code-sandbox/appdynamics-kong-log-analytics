@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: spring-boot-lb
+spec:
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 8080
+      protocol: TCP
+      nodePort: 30006
+  selector:
+    app: spring-boot
+  type: NodePort
