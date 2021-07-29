@@ -22,6 +22,12 @@ services:
       paths:
       - /mock
       strip_path: true
+  - name: pet-service
+    url: http://34.77.189.55
+    routes:
+      - name: pets-route
+        paths:
+          - /pets
 
 plugins:
   - name: rate-limiting
