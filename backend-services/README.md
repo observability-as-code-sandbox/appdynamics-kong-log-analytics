@@ -7,12 +7,12 @@ https://spring.io/guides/gs/spring-boot-kubernetes/
 ## Create test applications
 > Create deployment (done)
 ```
-kubectl create deployment demo --image=springguides/demo --dry-run=client -o=yaml > spring-guides-deployment.yaml
+kubectl create deployment spring-boot --image=arey/springboot-petclinic --dry-run=client -o=yaml > spring-deployment.yaml
 ```
 
 > Create service (done)
 ```
-kubectl create service clusterip spring-boot --tcp=8080:8080 --dry-run=client -o=yaml > spring-guides-svc.yaml
+kubectl create service clusterip spring-boot --tcp=80:8080 --dry-run=client -o=yaml > spring-svc.yaml
 ```
 
 > only need that needs to be run:
