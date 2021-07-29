@@ -11,10 +11,10 @@ imageInfo:
 
 # AppDynamics controller info (null VALUES TO BE PROVIDED BY THE USER)
 controllerInfo:
-  url: http://***REMOVED***:8090 
-  account: customer1
-  username: appd
-  password: appd
+  url: https://***REMOVED***.saas.appdynamics.com:443
+  account: ***REMOVED***
+  username: test-labs
+  password: test
   accessKey: SECRET_VALUE
   
   # SSL properties
@@ -62,17 +62,27 @@ podFilter: {}
 instrumentationConfig:
   enabled: true
   instrumentationMethod: Env
-  appNameStrategy: namespace 
+  #appNameStrategy: namespace 
   #appNameLabel: app
+  appNameStrategy: label #label # name by label!
+  appNameLabel: app
   defaultAppName: sample-app
-  nsToInstrumentRegex: test
-  imageInfo:
-    java:
-      image: "docker.io/appdynamics/java-agent:latest"
-      agentMountPath: /opt/appdynamics
-      imagePullPolicy: Always
+  nsToInstrumentRegex: dev|test|default
+  defaultInstrumentationLabelMatch:
+    - lang: java
+    - lang: dotnet
+  # imageInfo:
+  #   java:
+  #     image: "docker.io/appdynamics/java-agent:latest"
+  #     agentMountPath: /opt/appdynamics
+  #     imagePullPolicy: "IfNotPresent"
   instrumentationRules:
-    - namespaceRegex: test
+    - namespaceRegex: test|default
+      appNameLabel: app
+      imageInfo:
+        image: "docker.io/appdynamics/java-agent:latest"
+        agentMountPath: "/opt/appdynamics"
+        imagePullPolicy: "IfNotPresent"
 
 # Agent pod specific properties
 agentPod:
