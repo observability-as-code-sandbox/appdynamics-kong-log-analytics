@@ -7,13 +7,13 @@ https://docs.konghq.com/hub/kong-inc/file-log/#log-format
 Example controller connection:
 
 Controller: ***REMOVED***
-Analytics API: ***REMOVED***
-Account_name: ***REMOVED***
+Analytics API: 485bf5f2-KEY-HERE
+Account_name: customer1_X
 
 Findings:
 > 1) creating a schema cannot process list of objects
 
 > 2) you cannot import data that contains additional fields
 
-{"statusCode":400,"code":"Invalid.UnrecognizedField","message":"Unregistered field: account=[customer1_e52eb4e7-KEY-9685502317f2], eventIndex=[0], fieldName=[NotInSchema]","developerMessage":null}
+{"statusCode":400,"code":"Invalid.UnrecognizedField","message":"Unregistered field: account=[customer1_e52eb4e7-KEY-HERE], eventIndex=[0], fieldName=[NotInSchema]","developerMessage":null}
 
