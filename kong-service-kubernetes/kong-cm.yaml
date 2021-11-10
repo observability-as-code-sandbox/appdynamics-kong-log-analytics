@@ -1,0 +1,15 @@
+apiVersion: v1
+data:
+  kong.yml: "_format_version: \"2.1\"\n\nservices:\n  - name: gist-service\n    url:
+    https://api.github.com\n    routes:\n      - name: gists-route\n        paths:\n
+    \         - /gists\n  - name: youtube-service\n    url: https://www.youtube.com\n
+    \   routes:\n      - name: youtube-route\n        paths:\n          - /watch\n
+    \ - host: mockbin.org\n    name: example_service\n    port: 80\n    protocol:
+    http\n    routes:\n    - name: mocking\n      paths:\n      - /mock\n      strip_path:
+    true\n\nplugins:\n  - name: rate-limiting\n    service: gist-service\n    config:\n
+    \     minute: 8\n      policy: local\n  - name: prometheus\n  - name: file-log\n
+    \   config: \n      path: /usr/local/kong/logs/file.log\n      reopen: false\n"
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: kong-cm

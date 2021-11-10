@@ -1,0 +1,75 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kong-migrations
+  labels:
+        name: kong-migrations
+        io.kompose.service: kong-migrations
+spec:
+  selector:
+    matchLabels:
+      name: kong-migrations
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: kong-migrations
+        io.kompose.service: kong-migrations
+    spec:
+      volumes:
+        - name: kong-cm
+          configMap:
+            name: kong-cm
+        - name: shared-volume
+          emptyDir: {}
+      containers:
+        - envFrom:
+          - configMapRef:
+              name: appd-analytics-env
+          image: appdynamics/machine-agent-analytics:20.8.0
+          imagePullPolicy: IfNotPresent
+          name: appd-analytics-agent
+          ports:
+          - containerPort: 9090
+            protocol: TCP
+          resources:
+            limits:
+              cpu: 200m
+              memory: 900M
+            requests:
+              cpu: 100m
+              memory: 600M
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: /var/log
+            name: shared-volume
+        - env:
+            - name: KONG_ADMIN_ACCESS_LOG
+              value: /dev/stdout
+            - name: KONG_ADMIN_ERROR_LOG
+              value: /dev/stderr
+            - name: KONG_ADMIN_LISTEN
+              value: 0.0.0.0:8001, 0.0.0.0:8444 ssl
+            - name: KONG_DATABASE
+              value: "off"
+            - name: KONG_DECLARATIVE_CONFIG
+              value: /usr/local/kong/declarative/kong.yml
+            - name: KONG_PROXY_ACCESS_LOG
+              value: /dev/stdout
+            - name: KONG_PROXY_ERROR_LOG
+              value: /dev/stderr
+          image: kong:latest
+          name: kong-migrations
+          ports:
+            - containerPort: 8000
+            - containerPort: 8443
+            - containerPort: 8001
+            - containerPort: 8444
+          resources: {}
+          volumeMounts:
+            - mountPath: /usr/local/kong/declarative
+              name: kong-cm
+            - mountPath: /usr/local/kong/logs
+              name: shared-volume
+      
