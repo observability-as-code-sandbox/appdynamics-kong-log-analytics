@@ -6,7 +6,7 @@ https://docs.konghq.com/hub/kong-inc/file-log/#log-format
 
 Example controller connection:
 
-Controller: ***REMOVED***
+Controller: configmyappdemo-20103n-m3lp0zmi.appd-cx.com
 Analytics API: 485bf5f2-KEY-HERE
 Account_name: customer1_X
 

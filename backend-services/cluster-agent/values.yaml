@@ -11,8 +11,8 @@ imageInfo:
 
 # AppDynamics controller info (null VALUES TO BE PROVIDED BY THE USER)
 controllerInfo:
-  url: https://***REMOVED***.saas.appdynamics.com:443
-  account: ***REMOVED***
+  url: https://hsbc-labs.saas.appdynamics.com:443
+  account: hsbc-labs
   username: test-labs
   password: test
   accessKey: SECRET_VALUE

@@ -42,13 +42,13 @@ plugins:
       reopen: false
   # - name: http-log
   #   config: 
-  #     http_endpoint: http://***REMOVED***:9080/events/publish/myProducts
+  #     http_endpoint: http://configmyappdemo-20103n-m3lp0zmi.appd-cx.com:9080/events/publish/myProducts
   #     method: POST
   #     timeout: 1000
   #     keepalive: 1000
   #     flush_timeout: 2
   #     retry_count: 15
   #     headers:
-  #       X-Events-API-AccountName: "***REMOVED***"
-  #       X-Events-API-Key: "***REMOVED***"
+  #       X-Events-API-AccountName: "customer1_e52eb4e7-25d2-41c4-a5bc-9685502317f2"
+  #       X-Events-API-Key: "485bf5f2-73ac-4817-aaa5-99ac1879d4ba"
   #       Content-type: "application/vnd.appd.events+json;v=2"
